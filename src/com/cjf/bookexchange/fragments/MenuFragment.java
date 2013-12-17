@@ -39,8 +39,14 @@ public class MenuFragment extends ListFragment {
 			newContent = new LendFragment(getActivity());
 			break;
 		case 1:
-			newContent = new BorrowFragment( getActivity());
-
+			newContent = new BorrowFragment(getActivity());
+			break;
+		case 2:
+			newContent = new BrowseFragment(getActivity());
+			break;
+		case 3:
+			newContent = new SearchFragment(getActivity());
+			break;
 		}
 		if (newContent != null)
 			switchFragment(newContent);
