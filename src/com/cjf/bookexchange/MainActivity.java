@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
 				.replace(R.id.menu_frame, new MenuFragment()).commit();
 
 		// customize the SlidingMenu
-		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 
 	}
 
