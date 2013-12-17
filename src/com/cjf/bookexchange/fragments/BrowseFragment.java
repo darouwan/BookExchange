@@ -14,7 +14,7 @@ public class BrowseFragment extends Fragment {
 		// TODO Auto-generated constructor stu
 		fragmentActivity.setTitle(R.string.browse_name);
 		actionBar = fragmentActivity.getActionBar();
-		actionBar.removeAllTabs();
+		//actionBar.removeAllTabs();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		//actionBar.hide();
 	}

@@ -8,6 +8,7 @@ import com.cjf.bookexchange.R.layout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class MenuFragment extends ListFragment {
 		switch (position) {
 		case 0:
 			newContent = new LendFragment(getActivity());
+			Log.i("NEW", "new LendFragment");
 			break;
 		case 1:
 			newContent = new BorrowFragment(getActivity());

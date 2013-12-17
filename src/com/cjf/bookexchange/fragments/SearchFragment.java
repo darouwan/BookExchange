@@ -14,7 +14,7 @@ public class SearchFragment extends Fragment {
 		// TODO Auto-generated constructor stub
 		fragmentActivity.setTitle(R.string.search_name);
 		actionBar = fragmentActivity.getActionBar();
-		actionBar.removeAllTabs();
+		//actionBar.removeAllTabs();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 	}
 
