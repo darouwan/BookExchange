@@ -27,6 +27,7 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 	private String[] tabs = { "ÊéÃû", "ÏêÏ¸" };
 	private Activity activity;
 
+	
 	public LendFragment(FragmentActivity fragmentActivity) {
 		// TODO Auto-generated constructor stub
 		activity = fragmentActivity;
