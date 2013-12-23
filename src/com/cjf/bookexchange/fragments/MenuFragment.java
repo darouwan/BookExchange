@@ -32,7 +32,7 @@ public class MenuFragment extends ListFragment {
 				android.R.id.text1, colors);
 		setListAdapter(colorAdapter);
 		
-		//lendFragment = new LendFragment(getActivity());
+		lendFragment = new LendFragment(getActivity());
 	}
 
 	@Override
