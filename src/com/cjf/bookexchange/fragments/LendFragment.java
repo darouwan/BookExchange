@@ -23,7 +23,8 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "书名", "详细", "描述" };
+	// private String[] tabs = { "书名", "详细", "描述" };
+	private String[] tabs = { "书名", "详细" };
 	private Activity activity;
 
 	public LendFragment(FragmentActivity fragmentActivity) {
@@ -54,25 +55,25 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 			actionBar.addTab(actionBar.newTab().setText(tab_name)
 					.setTabListener(this));
 		}
-		
+
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-			 
-		    @Override
-		    public void onPageSelected(int position) {
-		        // on changing the page
-		        // make respected tab selected
-		        actionBar.setSelectedNavigationItem(position);
-		    }
-		 
-		    @Override
-		    public void onPageScrolled(int arg0, float arg1, int arg2) {
-		    }
-		 
-		    @Override
-		    public void onPageScrollStateChanged(int arg0) {
-		    }
+
+			@Override
+			public void onPageSelected(int position) {
+				// on changing the page
+				// make respected tab selected
+				actionBar.setSelectedNavigationItem(position);
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+			}
 		});
-		
+
 		return viewPager;
 
 	}

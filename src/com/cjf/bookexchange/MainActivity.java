@@ -13,6 +13,7 @@ public class MainActivity extends BaseActivity {
 
 	public MainActivity() {
 		super(R.string.app_name);
+
 	}
 
 	@Override
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
-		super.onSaveInstanceState(outState);
+		// super.onSaveInstanceState(outState);
 		getSupportFragmentManager().putFragment(outState, "mContent", mContent);
 	}
 

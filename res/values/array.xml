@@ -36,5 +36,20 @@
         <item>随便看看</item>
         <item>搜索</item>
     </string-array>
+    <string-array name="book_type">
+        <item>教材</item>
+        <item>工具书</item>
+        <item>小说</item>
+    </string-array>
+    <string-array name="years">
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+    </string-array>
+    <string-array name="amount">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
 </resources>

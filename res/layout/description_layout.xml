@@ -4,12 +4,7 @@
     android:layout_height="match_parent"
     android:background="#17df0d" >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="Design Movies Screen"
-        android:textSize="20dp" />
+
+
 
 </RelativeLayout>

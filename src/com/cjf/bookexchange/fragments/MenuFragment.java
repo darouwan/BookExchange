@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MenuFragment extends ListFragment {
+	public LendFragment lendFragment;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class MenuFragment extends ListFragment {
 				getActivity(), android.R.layout.simple_list_item_1,
 				android.R.id.text1, colors);
 		setListAdapter(colorAdapter);
+		
+		//lendFragment = new LendFragment(getActivity());
 	}
 
 	@Override
@@ -37,7 +40,7 @@ public class MenuFragment extends ListFragment {
 		Fragment newContent = null;
 		switch (position) {
 		case 0:
-			newContent = new LendFragment(getActivity());
+			newContent =  new LendFragment(getActivity());
 			Log.i("NEW", "new LendFragment");
 			break;
 		case 1:
