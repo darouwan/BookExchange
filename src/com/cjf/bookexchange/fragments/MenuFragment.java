@@ -55,6 +55,7 @@ public class MenuFragment extends ListFragment {
 		}
 		if (newContent != null)
 			switchFragment(newContent);
+		
 	}
 
 	// the meat of switching the above fragment
