@@ -7,6 +7,7 @@ import com.cjf.bookexchange.fragments.DetailFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
@@ -21,13 +22,14 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		switch (index) {
 		case 0:
 			// Top Rated fragment activity
+			Log.i("fragment", "book fragment created");
 			return new BookNameFragment();
 		case 1:
 			// Games fragment activity
 			return new DetailFragment();
-			// case 2:
+		case 2:
 			// Movies fragment activity
-			// return new DescriptionFragment();
+			return new DescriptionFragment();
 		}
 
 		return null;
@@ -36,7 +38,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 2;
+		return 3;
 	}
 
 }

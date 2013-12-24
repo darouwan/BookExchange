@@ -1,16 +1,20 @@
 package com.cjf.bookexchange;
 
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 
 import com.cjf.bookexchange.fragments.BorrowFragment;
 import com.cjf.bookexchange.fragments.LendFragment;
 import com.cjf.bookexchange.fragments.MenuFragment;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity  implements ActionBar.TabListener {
 	private Fragment mContent;
-
+	private ViewPager viewPager;
 	public MainActivity() {
 		super(R.string.app_name);
 
@@ -51,6 +55,25 @@ public class MainActivity extends BaseActivity {
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.content_frame, fragment).commit();
 		getSlidingMenu().showContent();
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		viewPager.setCurrentItem(tab.getPosition());
+		
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
