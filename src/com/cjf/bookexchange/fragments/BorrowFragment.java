@@ -23,13 +23,15 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	private String[] tabs = { " È√˚", "œÍœ∏", "√Ë ˆ" };
-	private Activity activity;
+	private FragmentActivity activity;
 
-	public BorrowFragment(FragmentActivity fragmentActivity) {
+	public BorrowFragment() {
 		// TODO Auto-generated constructor stub
-		activity = fragmentActivity;
-		fragmentActivity.setTitle(R.string.borrow_name);
-		actionBar = fragmentActivity.getActionBar();
+		activity = getActivity();
+		if (activity != null) {
+			activity.setTitle(R.string.borrow_name);
+			actionBar = activity.getActionBar();
+		}
 	}
 
 	@Override

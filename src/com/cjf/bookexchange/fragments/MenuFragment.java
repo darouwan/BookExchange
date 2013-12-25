@@ -41,17 +41,17 @@ public class MenuFragment extends ListFragment {
 		Fragment newContent = null;
 		switch (position) {
 		case 0:
-			newContent = new LendFragment(getActivity());
+			newContent = new LendFragment();
 			Log.i("fragment", "lend fragment created");
 			break;
 		case 1:
-			newContent = new BorrowFragment(getActivity());
+			newContent = new BorrowFragment();
 			break;
 		case 2:
-			newContent = new BrowseFragment(getActivity());
+			newContent = new BrowseFragment();
 			break;
 		case 3:
-			newContent = new SearchFragment(getActivity());
+			newContent = new SearchFragment();
 			break;
 		}
 		if (newContent != null)

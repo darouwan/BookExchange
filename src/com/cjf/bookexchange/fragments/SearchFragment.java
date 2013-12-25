@@ -10,12 +10,18 @@ import android.support.v4.app.FragmentActivity;
 @SuppressLint("ValidFragment")
 public class SearchFragment extends Fragment {
 	private ActionBar actionBar;
-	public SearchFragment(FragmentActivity fragmentActivity) {
+	private FragmentActivity activity;
+
+	public SearchFragment() {
 		// TODO Auto-generated constructor stub
-		fragmentActivity.setTitle(R.string.search_name);
-		actionBar = fragmentActivity.getActionBar();
-		//actionBar.removeAllTabs();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		activity = getActivity();
+		if (activity != null) {
+			activity.setTitle(R.string.search_name);
+			actionBar = activity.getActionBar();
+			// actionBar.removeAllTabs();
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		}
+
 	}
 
 }

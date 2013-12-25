@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
 			mContent = getSupportFragmentManager().getFragment(
 					savedInstanceState, "mContent");
 		if (mContent == null)
-			mContent = new LendFragment(this);
+			mContent = new LendFragment();
 
 		setContentView(R.layout.content_frame);
 		getSupportFragmentManager().beginTransaction()

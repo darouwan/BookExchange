@@ -26,15 +26,16 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 	// Tab titles
 	// private String[] tabs = { "书名", "详细", "描述" };
 	private String[] tabs = { "书名", "详细" };
-	private Activity activity;
+	private FragmentActivity activity;
 
-	
-	public LendFragment(FragmentActivity fragmentActivity) {
+	public LendFragment() {
 		// TODO Auto-generated constructor stub
-		activity = fragmentActivity;
-		fragmentActivity.setTitle(R.string.lend_name);
-		actionBar = activity.getActionBar();
-		actionBar.removeAllTabs();
+		activity = getActivity();
+		if (activity != null) {
+			activity.setTitle(R.string.lend_name);
+			actionBar = activity.getActionBar();
+			actionBar.removeAllTabs();
+		}
 	}
 
 	@Override
@@ -43,7 +44,7 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 		// inflater.inflate(R.layout.lendswitch2, container);
 		Log.i("lend fragment", "onCreateView called");
 		container.removeAllViews();
-		
+
 		viewPager = (ViewPager) inflater.inflate(R.layout.lendswitch2, null);
 
 		actionBar = activity.getActionBar();

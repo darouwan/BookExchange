@@ -10,13 +10,18 @@ import android.support.v4.app.FragmentActivity;
 @SuppressLint("ValidFragment")
 public class BrowseFragment extends Fragment {
 	private ActionBar actionBar;
-	public BrowseFragment(FragmentActivity fragmentActivity) {
+	private FragmentActivity activity;
+
+	public BrowseFragment() {
 		// TODO Auto-generated constructor stu
-		fragmentActivity.setTitle(R.string.browse_name);
-		actionBar = fragmentActivity.getActionBar();
-		//actionBar.removeAllTabs();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		//actionBar.hide();
+		activity = getActivity();
+		if (activity != null) {
+			activity.setTitle(R.string.browse_name);
+			actionBar = activity.getActionBar();
+			// actionBar.removeAllTabs();
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		}
+		// actionBar.hide();
 	}
 
 }
