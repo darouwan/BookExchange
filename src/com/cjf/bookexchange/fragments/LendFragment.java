@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 @SuppressLint("ValidFragment")
 public class LendFragment extends Fragment implements ActionBar.TabListener {
 	private ViewPager viewPager;
-	private TabsPagerAdapter mAdapter;
+	private static TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
 	// private String[] tabs = { " È√˚", "œÍœ∏", "√Ë ˆ" };
@@ -43,6 +43,7 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 			actionBar = activity.getActionBar();
 			actionBar.removeAllTabs();
 		}
+		Log.i("fragment", "lend fragment created");
 	}
 
 	@Override
@@ -50,14 +51,14 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 			Bundle savedInstanceState) {
 		// inflater.inflate(R.layout.lendswitch2, container);
 		Log.i("lend fragment", "onCreateView called");
-		container.removeAllViews();
+		// container.removeAllViews();
 
 		viewPager = (ViewPager) inflater.inflate(R.layout.lendswitch2, null);
 		if (activity != null) {
 			actionBar = activity.getActionBar();
 			actionBar.removeAllTabs();
 			mAdapter = new TabsPagerAdapter(
-					((FragmentActivity) activity).getSupportFragmentManager());
+					activity.getSupportFragmentManager());
 			viewPager.setAdapter(mAdapter);
 			actionBar.setHomeButtonEnabled(true);
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -101,6 +102,7 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
+		//Log.i(this.getClass().toString(), tab.getPosition() + "");
 		viewPager.setCurrentItem(tab.getPosition());
 
 	}

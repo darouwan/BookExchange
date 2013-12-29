@@ -42,7 +42,7 @@ public class MenuFragment extends ListFragment {
 		switch (position) {
 		case 0:
 			newContent = new LendFragment();
-			Log.i("fragment", "lend fragment created");
+			
 			break;
 		case 1:
 			newContent = new BorrowFragment();
