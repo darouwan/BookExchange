@@ -30,6 +30,13 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 
 	public LendFragment() {
 		// TODO Auto-generated constructor stub
+
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
 		activity = getActivity();
 		if (activity != null) {
 			activity.setTitle(R.string.lend_name);
@@ -46,39 +53,41 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 		container.removeAllViews();
 
 		viewPager = (ViewPager) inflater.inflate(R.layout.lendswitch2, null);
+		if (activity != null) {
+			actionBar = activity.getActionBar();
+			actionBar.removeAllTabs();
+			mAdapter = new TabsPagerAdapter(
+					((FragmentActivity) activity).getSupportFragmentManager());
+			viewPager.setAdapter(mAdapter);
+			actionBar.setHomeButtonEnabled(true);
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		actionBar = activity.getActionBar();
-		actionBar.removeAllTabs();
-		mAdapter = new TabsPagerAdapter(
-				((FragmentActivity) activity).getSupportFragmentManager());
-		viewPager.setAdapter(mAdapter);
-		actionBar.setHomeButtonEnabled(true);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+			// Adding Tabs
+			for (String tab_name : tabs) {
+				actionBar.addTab(actionBar.newTab().setText(tab_name)
+						.setTabListener(this));
+			}
 
-		// Adding Tabs
-		for (String tab_name : tabs) {
-			actionBar.addTab(actionBar.newTab().setText(tab_name)
-					.setTabListener(this));
+			viewPager
+					.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+						@Override
+						public void onPageSelected(int position) {
+							// on changing the page
+							// make respected tab selected
+							actionBar.setSelectedNavigationItem(position);
+						}
+
+						@Override
+						public void onPageScrolled(int arg0, float arg1,
+								int arg2) {
+						}
+
+						@Override
+						public void onPageScrollStateChanged(int arg0) {
+						}
+					});
 		}
-
-		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-			@Override
-			public void onPageSelected(int position) {
-				// on changing the page
-				// make respected tab selected
-				actionBar.setSelectedNavigationItem(position);
-			}
-
-			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-			}
-
-			@Override
-			public void onPageScrollStateChanged(int arg0) {
-			}
-		});
-
 		return viewPager;
 
 	}

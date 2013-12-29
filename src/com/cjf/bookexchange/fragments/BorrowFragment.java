@@ -25,8 +25,11 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 	private String[] tabs = { " È√˚", "œÍœ∏", "√Ë ˆ" };
 	private FragmentActivity activity;
 
-	public BorrowFragment() {
-		// TODO Auto-generated constructor stub
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
 		activity = getActivity();
 		if (activity != null) {
 			activity.setTitle(R.string.borrow_name);
@@ -41,19 +44,22 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 		container.removeAllViews();
 		viewPager = (ViewPager) inflater.inflate(R.layout.lendswitch2, null);
 
-		actionBar = activity.getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		if (actionBar.getNavigationMode() != ActionBar.NAVIGATION_MODE_TABS) {
-			actionBar.removeAllTabs();
-			mAdapter = new TabsPagerAdapter(
-					((FragmentActivity) activity).getSupportFragmentManager());
-			viewPager.setAdapter(mAdapter);
-			actionBar.setHomeButtonEnabled(true);
+		if (activity != null) {
+			actionBar = activity.getActionBar();
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+			if (actionBar.getNavigationMode() != ActionBar.NAVIGATION_MODE_TABS) {
+				actionBar.removeAllTabs();
+				mAdapter = new TabsPagerAdapter(
+						((FragmentActivity) activity)
+								.getSupportFragmentManager());
+				viewPager.setAdapter(mAdapter);
+				actionBar.setHomeButtonEnabled(true);
 
-			// Adding Tabs
-			for (String tab_name : tabs) {
-				actionBar.addTab(actionBar.newTab().setText(tab_name)
-						.setTabListener(this));
+				// Adding Tabs
+				for (String tab_name : tabs) {
+					actionBar.addTab(actionBar.newTab().setText(tab_name)
+							.setTabListener(this));
+				}
 			}
 		}
 		return viewPager;
