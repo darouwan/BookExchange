@@ -22,9 +22,8 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
-	private String[] tabs = { "书名", "详细", "描述" };
+	private String[] tabs = { "书名", "详细" };
 	private FragmentActivity activity;
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,21 +46,39 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 		if (activity != null) {
 			actionBar = activity.getActionBar();
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-			if (actionBar.getNavigationMode() != ActionBar.NAVIGATION_MODE_TABS) {
-				actionBar.removeAllTabs();
-				mAdapter = new TabsPagerAdapter(
-						((FragmentActivity) activity)
-								.getSupportFragmentManager());
-				viewPager.setAdapter(mAdapter);
-				actionBar.setHomeButtonEnabled(true);
 
-				// Adding Tabs
-				for (String tab_name : tabs) {
-					actionBar.addTab(actionBar.newTab().setText(tab_name)
-							.setTabListener(this));
-				}
+			actionBar.removeAllTabs();
+			mAdapter = new TabsPagerAdapter(
+					((FragmentActivity) activity).getSupportFragmentManager());
+			viewPager.setAdapter(mAdapter);
+			actionBar.setHomeButtonEnabled(true);
+
+			// Adding Tabs
+			for (String tab_name : tabs) {
+				actionBar.addTab(actionBar.newTab().setText(tab_name)
+						.setTabListener(this));
 			}
+			viewPager
+					.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+						@Override
+						public void onPageSelected(int position) {
+							// on changing the page
+							// make respected tab selected
+							actionBar.setSelectedNavigationItem(position);
+						}
+
+						@Override
+						public void onPageScrolled(int arg0, float arg1,
+								int arg2) {
+						}
+
+						@Override
+						public void onPageScrollStateChanged(int arg0) {
+						}
+					});
 		}
+
 		return viewPager;
 
 		// actionBar.removeAllTabs();
@@ -76,7 +93,7 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-
+		viewPager.setCurrentItem(tab.getPosition());
 	}
 
 	@Override

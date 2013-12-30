@@ -55,8 +55,8 @@ public class LendFragment extends Fragment implements ActionBar.TabListener {
 
 		viewPager = (ViewPager) inflater.inflate(R.layout.lendswitch2, null);
 		if (activity != null) {
-			actionBar = activity.getActionBar();
-			actionBar.removeAllTabs();
+			
+			
 			mAdapter = new TabsPagerAdapter(
 					activity.getSupportFragmentManager());
 			viewPager.setAdapter(mAdapter);
