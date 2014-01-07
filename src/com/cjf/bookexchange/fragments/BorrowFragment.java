@@ -2,7 +2,7 @@ package com.cjf.bookexchange.fragments;
 
 import com.cjf.bookexchange.MainActivity;
 import com.cjf.bookexchange.R;
-import com.cjf.bookexchange.adapter.TabsPagerAdapter;
+import com.cjf.bookexchange.adapter.BorrowTabsPagerAdapter;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -20,7 +20,7 @@ import android.view.ViewGroup;
 @SuppressLint("ValidFragment")
 public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 	private ViewPager viewPager;
-	private TabsPagerAdapter mAdapter;
+	private BorrowTabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	private String[] tabs = { " È√˚", "œÍœ∏" };
 	private FragmentActivity activity;
@@ -48,7 +48,7 @@ public class BorrowFragment extends Fragment implements ActionBar.TabListener {
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 			actionBar.removeAllTabs();
-			mAdapter = new TabsPagerAdapter(
+			mAdapter = new BorrowTabsPagerAdapter(
 					((FragmentActivity) activity).getSupportFragmentManager());
 			viewPager.setAdapter(mAdapter);
 			actionBar.setHomeButtonEnabled(true);

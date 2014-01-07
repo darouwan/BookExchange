@@ -10,9 +10,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 
-public class TabsPagerAdapter extends FragmentStatePagerAdapter {
+public class BorrowTabsPagerAdapter extends FragmentStatePagerAdapter {
 
-	public TabsPagerAdapter(FragmentManager fm) {
+	public BorrowTabsPagerAdapter(FragmentManager fm) {
 		super(fm);
 		// TODO Auto-generated constructor stub
 		Log.i("fragment", "TabsPagerAdapter created ");
