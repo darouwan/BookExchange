@@ -21,7 +21,7 @@ public class BrowseFragment extends Fragment implements ActionBar.TabListener{
 	private ViewPager viewPager;
 	private ActionBar actionBar;
 	private FragmentActivity activity;
-	private BorrowTabsPagerAdapter mAdapter;
+	private BrowseTabsPagerAdapter mAdapter;
 	private String[] tabs = { "³ö×â", "½èÈë","ÖÜ±ß" };
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class BrowseFragment extends Fragment implements ActionBar.TabListener{
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 			actionBar.removeAllTabs();
-			mAdapter = new BorrowTabsPagerAdapter(
+			mAdapter = new BrowseTabsPagerAdapter(
 					((FragmentActivity) activity).getSupportFragmentManager());
 			viewPager.setAdapter(mAdapter);
 			actionBar.setHomeButtonEnabled(true);

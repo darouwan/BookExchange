@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:ems="10" >
+        android:ems="10" 
+        android:hint="Book Name">
         <requestFocus />
     </EditText>
 

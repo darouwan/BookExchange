@@ -71,5 +71,6 @@
     <string name="hasNote">是否有笔记?</string>
     <string name="amount">数量</string>
     <string name="submit">提交</string>
+    <string name="Description">Description</string>
 
 </resources>
